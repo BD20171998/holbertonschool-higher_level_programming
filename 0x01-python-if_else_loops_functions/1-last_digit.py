@@ -4,8 +4,13 @@ number = random.randint(-10000, 10000)
 
 if number < 0:
     mod = (-number) % 10
-    print("Last digit of {} is -{} and is less than 6 and not 0".format
-          (number, mod))
+
+    if mod == 0:
+        print("Last digit of {} is {} and is 0".format(number, mod))
+
+    elif mod != 0:
+        print("Last digit of {} is -{} and is less than 6 and not 0".format
+              (number, mod))
 
 elif number > 0:
     mod = number % 10
@@ -16,5 +21,8 @@ elif number > 0:
         print("Last digit of {} is {} and is less than 6 and not 0".format
               (number, mod))
 
-elif mod == 0:
-    print("Last digit of {} is {} and is 0".format(number, mod))
+    elif mod == 0:
+        print("Last digit of {} is {} and is 0".format(number, mod))
+
+elif number == 0:
+    print("Last digit of 0 is 0 and is 0")
