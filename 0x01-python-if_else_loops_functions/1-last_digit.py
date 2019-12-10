@@ -15,6 +15,6 @@ elif mod < 6 and mod != 0 and number > 0:
 elif mod < 6 and mod != 0 and number < 0:
     print("Last digit of {} is -{} and is less than 6 and not 0".format(number,
                                                                         mod))
-elif mod > 5 and mod != 0 and number < 0:
+elif mod > 5 and number < 0:
     print("Last digit of {} is -{} and is less than 6 and not 0".format(number,
                                                                         mod))
