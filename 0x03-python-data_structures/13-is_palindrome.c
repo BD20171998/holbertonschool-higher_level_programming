@@ -42,7 +42,7 @@ int is_palindrome(listint_t **head)
 		if (temp1->n != temp2->n)
 			return (0);
 
-		if (len % 2 == 0)
+		if (len % 2 != 0)
 			median = temp1->next;
 	}
 	if (median->n != temp1->n && median->n != temp2->n)
