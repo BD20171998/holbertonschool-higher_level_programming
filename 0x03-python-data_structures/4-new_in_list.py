@@ -9,8 +9,3 @@ def new_in_list(my_list, idx, element):
         lis[len(lis):] = [element]
         lst = my_list[0:idx] + lis + my_list[idx+1:]
         return lst
-
-    else:
-        lis = []
-        lis[len(lis):] = [element]
-        return lst
