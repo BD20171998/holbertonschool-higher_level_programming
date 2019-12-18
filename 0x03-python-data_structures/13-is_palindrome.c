@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 	listint_t *median, *temp1, *temp2;
 	int i, j, len = 0;
 
-	if (*head == NULL)
+	if (*head == NULL || head == NULL)
 		return (1);
 
 	temp1 = *head;
