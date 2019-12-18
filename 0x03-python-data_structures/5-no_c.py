@@ -4,7 +4,12 @@
 def no_c(my_string):
 
     if my_string:
-        lst = my_string[:]
-        a = ["c", "C"]
-        st = "".join(i for i in lst if i not in a)
-        return st
+        lst = ""
+
+        for i in range(0, len(my_string)):
+            if my_string[i] == "c" or my_string[i] == "C":
+                continue
+            else:
+                lst += lst.join(my_string[i])
+
+        return lst
