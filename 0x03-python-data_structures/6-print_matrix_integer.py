@@ -12,5 +12,3 @@ def print_matrix_integer(matrix=[[]]):
                     print('{:d}'.format(matrix[i][j]))
                     break
                 print('{:d} '.format(matrix[i][j]), end="")
-            if i == x:
-                print('')
