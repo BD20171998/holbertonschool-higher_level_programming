@@ -40,4 +40,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
     elif len(tuple_a) == 1 and len(tuple_b) == 1:
         x = tuple_a[0]
         w = tuple_b[0]
-        return (x, w)
+        return (x + w, 0)
