@@ -3,16 +3,16 @@
 
 def print_matrix_integer(matrix=[[]]):
 
-    if matrix:
-        for i in range(0, len(matrix)):
-            x = len(matrix[i])
+    if len(matrix) == 1 and len(matrix[0]) == 0:
+        print('')
 
-            for j in range(0, x):
-                if j == x - 1 and i != x:
-                    print('{:d}'.format(matrix[i][j]))
-                    break
-                if j == x - 1 and i == x - 1:
-                    print('{:d}'.format(matrix[i][j]), end="\n")
-                print('{:d} '.format(matrix[i][j]), end="")
+    for i in range(0, len(matrix)):
+        x = len(matrix[i])
 
-    print('')
+        for j in range(0, x):
+            if j == x - 1 and i != x:
+                print('{:d}'.format(matrix[i][j]))
+                break
+            if j == x - 1 and i == x - 1:
+                print('{:d}'.format(matrix[i][j]), end="\n")
+            print('{:d} '.format(matrix[i][j]), end="")
