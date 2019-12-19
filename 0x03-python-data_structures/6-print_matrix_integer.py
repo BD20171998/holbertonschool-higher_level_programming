@@ -10,9 +10,8 @@ def print_matrix_integer(matrix=[[]]):
         x = len(matrix[i])
 
         for j in range(0, x):
-            if j == x - 1 and i != x:
+            if j == x - 1:
                 print('{:d}'.format(matrix[i][j]))
-                break
-            if j == x - 1 and i == x - 1:
-                print('{:d}'.format(matrix[i][j]), end="\n")
-            print('{:d} '.format(matrix[i][j]), end="")
+
+            else:
+                print('{:d}'.format(matrix[i][j]), end=" ")
