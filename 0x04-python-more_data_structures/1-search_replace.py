@@ -3,10 +3,11 @@
 
 def search_replace(my_list, search, replace):
 
-    newlist = my_list[:]
+    if my_list:
+        newlist = my_list[:]
 
-    for i in newlist:
-        if i == search:
-            newlist[i] = replace
+        for i in newlist:
+            if i == search:
+                newlist[i] = replace
 
-    return newlist
+        return newlist
