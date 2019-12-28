@@ -41,7 +41,7 @@ listint_t *reverse_listint(listint_t **head, listint_t **head2)
 
 	prev = NULL;
 
-	while (i < l / 2)
+	while (i <= l / 2)
 	{
 		future = (*head)->next;
 		(*head)->next = prev;
