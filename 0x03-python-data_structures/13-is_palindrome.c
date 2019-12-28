@@ -52,7 +52,7 @@ listint_t *reverse_listint(listint_t **head, listint_t **head2)
 
 	*head2 = prev;
 
-	if (l % 2 == 0)
+	if (l % 2 != 0)
 		*head2 = (*head2)->next;
 
 	return (*head);
