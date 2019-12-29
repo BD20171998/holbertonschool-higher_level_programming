@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
     total = 0
     i = 0
 
-    if roman_string is None or roman_string == '':
+    if (roman_string is None) or (type(roman_string) is not str):
         return total
 
     while i in range(len(roman_string)):
