@@ -26,11 +26,11 @@ int len(listint_t *alist)
 /**
  * reverse_listint - function that reverses a listint_t linked list
  * @head: Double pointer of linked list listint_t
- * @head2: Double pointer of linked list listint_t -2nd copy
+ * @temp1: Double pointer of linked list listint_t -2nd copy
  * Return: Pointer to the middle node of the reversed list
  */
 
-listint_t *reverse_listint(listint_t **head, listint_t **head2)
+listint_t *reverse_listint(listint_t **head, listint_t **temp1)
 {
 	listint_t *prev;
 	listint_t *future;
@@ -41,7 +41,7 @@ listint_t *reverse_listint(listint_t **head, listint_t **head2)
 
 	prev = NULL;
 
-	while (i <= l / 2)
+	while (i < l / 2)
 	{
 		future = (*head)->next;
 		(*head)->next = prev;
@@ -50,10 +50,13 @@ listint_t *reverse_listint(listint_t **head, listint_t **head2)
 		++i;
 	}
 
-	*head2 = prev;
+	*head = prev;
 
 	if (l % 2 != 0)
-		*head2 = (*head2)->next;
+		*temp1 = future->next;
+
+	else
+		*temp1 = future;
 
 	return (*head);
 }
@@ -89,10 +92,10 @@ int is_palindrome(listint_t **head)
 		if (temp1->n != temp2->n)
 			return (0);
 
-		++i;
-
 		temp1 = temp1->next;
 		temp2 = temp2->next;
+
+		++i;
 	}
 
 	return (1);
