@@ -6,23 +6,26 @@ def roman_to_int(roman_string):
     total = 0
     i = 0
 
-    for i in range(len(roman_string)):
+    if roman_string is None or roman_string == '':
+        return total
+
+    while i in range(len(roman_string)):
+
         if i == len(roman_string) - 1:
             total += roman[roman_string[i]]
             break
 
         else:
-
             if roman[roman_string[i]] < roman[roman_string[i+1]]:
-                if i + 1 == len(roman_string) - 1:
-                    total += roman[roman_string[i+1]] - roman[roman_string[i]]
-                    break
+                total += roman[roman_string[i+1]] - roman[roman_string[i]]
+                i = i + 1
 
-                else:
-                    total += roman[roman_string[i+1]] - roman[roman_string[i]]
-                    i = i + 2
+                if i + 1 == len(roman_string) - 1:
+                    break
 
             else:
                 total += roman[roman_string[i]]
+
+        i = i + 1
 
     return total
