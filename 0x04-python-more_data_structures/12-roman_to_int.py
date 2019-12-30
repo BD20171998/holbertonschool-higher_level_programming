@@ -20,7 +20,7 @@ def roman_to_int(roman_string):
                 total += roman[roman_string[i+1]] - roman[roman_string[i]]
                 i = i + 1
 
-                if i + 1 == len(roman_string) - 1:
+                if i + 1 == len(roman_string):
                     break
 
             else:
