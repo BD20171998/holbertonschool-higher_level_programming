@@ -3,8 +3,11 @@
 
 def safe_print_integer(value):
     try:
-        print('{:d}'.format(value))
-        return True
+        if isinstance(value, int) is True:
+            print('{:d}'.format(value))
+            return True
 
+        else:
+            raise
     except:
         return False
