@@ -19,7 +19,7 @@ def add_integer(a, b=98):
     if type(b) is not float and type(b) is not int:
         raise TypeError('b must be an integer')
 
-    int(a)
-    int(b)
+    x = int(a)
+    y = int(b)
 
-    return a + b
+    return (x + y)
