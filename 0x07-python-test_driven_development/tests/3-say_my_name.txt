@@ -22,12 +22,20 @@ Now use it:
     >>> say_my_name("Bob")
     My name is Bob 
 
+    >>> say_my_name("Bob")
+    My name is Bob 
+
     >>> say_my_name(12, "White")
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
 
     >>> say_my_name({1:'dfdf'}, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name({'dfdf'}, "White")
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
@@ -73,6 +81,11 @@ Now use it:
     TypeError: last_name must be a string
 
     >>> say_my_name("Pico", {1:'dggd'})
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Pico", {'dggd'})
     Traceback (most recent call last):
     ...
     TypeError: last_name must be a string
