@@ -55,6 +55,9 @@ class Rectangle:
         """Function that prints rectangle of '#' characaters"""
         my_string = ""
 
+        if (self.__height == 0 or self.__width == 0):
+            return my_string
+
         for i in range(self.__height):
             for j in range(self.__width):
                 my_string += '#'
