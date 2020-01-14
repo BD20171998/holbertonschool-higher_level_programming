@@ -2,5 +2,5 @@
 
 
 class Rectangle:
-    """empty class that defines a square"""
+    """empty class that defines a rectangle"""
     pass
