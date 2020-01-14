@@ -22,10 +22,6 @@ def text_indentation(text):
     x = 0
 
     while x < len(text):
-        if x == len(text)-2 and text[x+1] == ' ':
-            print('{}'.format(text[x]), end='')
-            break
-
         if x+1 == len(text):
             print('{}'.format(text[x]), end='')
             break

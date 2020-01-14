@@ -17,10 +17,17 @@ Now use it:
     <BLANKLINE>
     Nice to meet you.
 
-    >>> text_indentation("Name is Ray. Hello  to you")
+    >>> text_indentation("Name is Ray. Hello  to you   ")
     Name is Ray.
     <BLANKLINE>
-    Hello  to you
+    Hello  to you   
+
+    >>> text_indentation("Name is Aaron. Hello  to you   ?nn")
+    Name is Aaron.
+    <BLANKLINE>
+    Hello  to you   ?
+    <BLANKLINE>
+    nn
 
     >>> text_indentation(":?")
     :
