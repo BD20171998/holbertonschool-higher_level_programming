@@ -15,7 +15,7 @@ def matrix_divided(matrix, div):
     matrix divided by that number
     """
 
-    if matrix[0] == []:
+    if (matrix == [] or matrix[0] == []):
         raise TypeError('matrix must be a matrix (list of lists) of '
                         'integers/floats')
 
