@@ -77,3 +77,18 @@ Now use it:
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
+
+    >>> print(add_integer(float('nan'), 12))
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> print(add_integer(-float('inf'), 12))
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> print(add_integer(12, float('inf')))
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
