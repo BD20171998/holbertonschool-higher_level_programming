@@ -11,6 +11,10 @@ Now use it:
     >>> matrix_divided(matrix, 3)
     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
     >>> matrix = [[0.12, 2.0, 3.989, 4.1, -5]]
     >>> matrix_divided(matrix, 0.499)
     [[0.24, 4.01, 7.99, 8.22, -10.02]]
@@ -136,3 +140,15 @@ Now use it:
     Traceback (most recent call last):
     ...
     TypeError: div must be a number
+
+    >>> matrix = [[11, 42, 3], [8, 3.9, -9.2]]
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix = [[11, 42, 3], [8, 3.9, -9.2]]
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
