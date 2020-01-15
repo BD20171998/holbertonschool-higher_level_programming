@@ -28,7 +28,10 @@ def text_indentation(text):
 
         if text[x] in special and text[x+1] == ' ':
             print('{}'.format(text[x]), end='\n\n')
-            x += 2
+            y = 1
+            while text[x+y] == ' ' and x+y != len(text):
+                y += 1
+            x += y
             continue
 
         if text[x] in special and text[x+1] != ' ':

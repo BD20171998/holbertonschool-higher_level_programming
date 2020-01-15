@@ -12,6 +12,15 @@ Now use it:
     <BLANKLINE>
     I am Python3.
 
+    >>> text_indentation("Holberton. School? How are you: John")
+    Holberton.
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+    How are you:
+    <BLANKLINE>
+    John
+
     >>> text_indentation("My name is Joe.Nice to meet you.")
     My name is Joe.
     <BLANKLINE>
