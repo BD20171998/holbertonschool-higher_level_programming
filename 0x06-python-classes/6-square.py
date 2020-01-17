@@ -52,18 +52,18 @@ class Square:
         spaces before each # character
         """
 
-        if self.__size == 0:
+        if self.size == 0:
             print()
+            return
 
-        if self.__position[1] > 0:
-            for i in range(self.__position[1]):
+        if self.position[1] > 0:
+            for i in range(self.position[1]):
                 print()
 
-        else:
-            for i in range(self.__size):
-                if self.__position[0] > 0:
-                    for k in range(self.__position[0]):
-                        print(' ', end='')
-                for j in range(self.__size):
+        for i in range(self.size):
+            if self.position[0] > 0:
+                for k in range(self.position[0]):
+                    print(' ', end='')
+            for j in range(self.size):
                     print('#', end='')
-                print()
+            print()
