@@ -52,12 +52,12 @@ class Square:
         spaces before each # character
         """
 
+        if self.__size == 0:
+            print()
+
         if self.__position[1] > 0:
             for i in range(self.__position[1]):
                 print()
-
-        if self.__size == 0:
-            print()
 
         else:
             for i in range(self.__size):
