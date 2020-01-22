@@ -17,22 +17,22 @@ def read_lines(filename="", nb_lines=0):
     it to stdout. Reads entire file for nb_lines <= 0
     """
     with open(filename, encoding='utf-8', mode='r') as f:
-            x = 0
-            lines = f.readlines()
-            last = lines[-1]
+        x = 0
+        lines = f.readlines()
+        last = lines[-1]
 
-            if nb_lines <= 0:
-                print(f.read())
-                f.close()
-                return
+        if nb_lines <= 0:
+            print(f.read())
+            f.close()
+            return
 
-            else:
-                for line in lines:
+        else:
+            for line in lines:
 
-                    if x == nb_lines - 1 or line is last:
-                        print(line)
-                        f.close()
-                        return
-
+                if x == nb_lines - 1 or line is last:
                     print(line)
-                    x += 1
+                    f.close()
+                    return
+
+                print(line)
+                x += 1
