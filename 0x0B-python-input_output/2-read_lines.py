@@ -22,18 +22,15 @@ def read_lines(filename="", nb_lines=0):
             last = lines[-1]
 
             if nb_lines <= 0:
-                for i in lines:
-                    if i is last:
-                        print(i, end='')
-                        f.close()
-                        return
-                    print(i)
+                print(f.read(), end="")
+                f.close()
+                return
 
             else:
                 for line in lines:
 
                     if x == nb_lines - 1 or line is last:
-                        print(line, end='')
+                        print(line)
                         f.close()
                         return
 
