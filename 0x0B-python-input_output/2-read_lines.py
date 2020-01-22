@@ -22,7 +22,7 @@ def read_lines(filename="", nb_lines=0):
             last = lines[-1]
 
             if nb_lines <= 0:
-                print(f.read(), end="")
+                print(f.read())
                 f.close()
                 return
 
