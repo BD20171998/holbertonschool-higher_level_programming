@@ -8,6 +8,10 @@ Using ``my_list``
 Now use it:
 
     >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
+    >>> my_list = MyList()
     >>> my_list.append((0,12))
     >>> my_list.append((3,4))
     >>> my_list.append((0,19))
