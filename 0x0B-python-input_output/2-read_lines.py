@@ -19,7 +19,7 @@ def read_lines(filename="", nb_lines=0):
     with open(filename, encoding='utf-8', mode='r') as f:
         x = 0
 
-        if nb_lines <= 0:
+        if nb_lines <= 0 or nb_lines is None:
             print(f.read())
             f.close()
             return
