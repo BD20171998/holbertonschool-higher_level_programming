@@ -18,8 +18,6 @@ def read_lines(filename="", nb_lines=0):
     """
     with open(filename, encoding='utf-8', mode='r') as f:
         x = 0
-        lines = f.readlines()
-        last = lines[-1]
 
         if nb_lines <= 0:
             print(f.read())
@@ -27,12 +25,12 @@ def read_lines(filename="", nb_lines=0):
             return
 
         else:
-            for line in lines:
-
-                if x == nb_lines - 1 or line is last:
-                    print(line)
+            for line in f:
+                if x == nb_lines - 1:
+                    print(line, end='')
                     f.close()
                     return
 
-                print(line)
+                print(line, end='')
                 x += 1
+        f.close()
