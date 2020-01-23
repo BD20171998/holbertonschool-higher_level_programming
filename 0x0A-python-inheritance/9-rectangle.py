@@ -17,7 +17,6 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         """Function that returns area"""
-        super().area()
         return self.__height * self.__width
 
     def __str__(self):
