@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-
+"""Importing Base class"""
 from models.base import Base
 
 
@@ -92,12 +92,31 @@ class Rectangle(Base):
         """
         public method that prints the Rectangle instance with the character #
         """
+        if self.__y > 0:
+            for k in range(self.__y):
+                print()
+
         for i in range(self.__height):
+            if self.__x > 0:
+                for s in range(self.__x):
+                    print(' ', end='')
+
             for j in range(self.__width):
+
                 if i == self.__height - 1 and j == self.__width - 1:
                     print('#')
                     break
                 if j == self.__width - 1:
                     print('#')
                     continue
+
                 print('#', end='')
+
+    def __str__(self):
+        """
+        overriding the __str__ method so that it returns [Rectangle] (<id>)
+        <x>/<y> - <width>/<height>
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.__x, self.__y,
+                                                self.__width, self.__height)
