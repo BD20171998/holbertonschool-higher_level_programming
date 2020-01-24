@@ -121,31 +121,56 @@ class Rectangle(Base):
                                                 self.id, self.__x, self.__y,
                                                 self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         public method that assigns an updated  argument to each attribute
         for an instance
         """
-        arguments = ["id", "width", "height", "x", "y"]
         passed_args = [k for k in args]
+        passed_kwargs = {k: kwargs[k] for k in kwargs}
 
-        arg_dict = {k: v for (k, v) in zip(arguments, passed_args)}
+        if len(passed_args) > 0:
 
-        if 'width' in arg_dict:
-            self.width = arg_dict['width']
+            arguments = ["id", "width", "height", "x", "y"]
+            passed_args = [k for k in args]
 
-        if 'height' in arg_dict:
-            self.height = arg_dict['height']
+            arg_dict = {k: v for (k, v) in zip(arguments, passed_args)}
 
-        if 'x' in arg_dict:
-            self.x = arg_dict['x']
+            if 'width' in arg_dict:
+                self.width = arg_dict['width']
 
-        if 'y' in arg_dict:
-            self.y = arg_dict['y']
+            if 'height' in arg_dict:
+                self.height = arg_dict['height']
 
-        if 'id' in arg_dict:
-            if arg_dict['id'] is not None:
-                self.id = arg_dict['id']
+            if 'x' in arg_dict:
+                self.x = arg_dict['x']
 
-            else:
-                super().__init__()
+            if 'y' in arg_dict:
+                self.y = arg_dict['y']
+
+            if 'id' in arg_dict:
+                if arg_dict['id'] is not None:
+                    self.id = arg_dict['id']
+
+                else:
+                    super().__init__()
+
+        if len(passed_args) == 0 and len(passed_kwargs) > 0:
+            if 'width' in passed_kwargs:
+                self.width = passed_kwargs['width']
+
+            if 'height' in passed_kwargs:
+                self.height = passed_kwargs['height']
+
+            if 'x' in passed_kwargs:
+                self.x = passed_kwargs['x']
+
+            if 'y' in passed_kwargs:
+                self.y = passed_kwargs['y']
+
+            if 'id' in passed_kwargs:
+                if passed_kwargs['id'] is not None:
+                    self.id = passed_kwargs['id']
+
+                else:
+                    super().__init__()
