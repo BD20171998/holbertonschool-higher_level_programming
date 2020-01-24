@@ -120,3 +120,32 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                                                 self.id, self.__x, self.__y,
                                                 self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        public method that assigns an updated  argument to each attribute
+        for an instance
+        """
+        arguments = ["id", "width", "height", "x", "y"]
+        passed_args = [k for k in args]
+
+        arg_dict = {k: v for (k, v) in zip(arguments, passed_args)}
+
+        if 'width' in arg_dict:
+            self.width = arg_dict['width']
+
+        if 'height' in arg_dict:
+            self.height = arg_dict['height']
+
+        if 'x' in arg_dict:
+            self.x = arg_dict['x']
+
+        if 'y' in arg_dict:
+            self.y = arg_dict['y']
+
+        if 'id' in arg_dict:
+            if arg_dict['id'] is not None:
+                self.id = arg_dict['id']
+
+            else:
+                super().__init__()
