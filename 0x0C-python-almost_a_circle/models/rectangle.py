@@ -13,12 +13,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-
-        if id is not None:
-            self.id = id
-
-        else:
-            super().__init__()
+        super().__init__(id)
 
     @property
     def width(self):
@@ -132,7 +127,6 @@ class Rectangle(Base):
         if len(passed_args) > 0:
 
             arguments = ["id", "width", "height", "x", "y"]
-            passed_args = [k for k in args]
 
             arg_dict = {k: v for (k, v) in zip(arguments, passed_args)}
 
@@ -149,11 +143,7 @@ class Rectangle(Base):
                 self.y = arg_dict['y']
 
             if 'id' in arg_dict:
-                if arg_dict['id'] is not None:
-                    self.id = arg_dict['id']
-
-                else:
-                    super().__init__()
+                super().__init__(arg_dict['id'])
 
         if len(passed_args) == 0 and len(passed_kwargs) > 0:
             if 'width' in passed_kwargs:
@@ -169,8 +159,4 @@ class Rectangle(Base):
                 self.y = passed_kwargs['y']
 
             if 'id' in passed_kwargs:
-                if passed_kwargs['id'] is not None:
-                    self.id = passed_kwargs['id']
-
-                else:
-                    super().__init__()
+                super().__init__(passed_kwargs['id'])
