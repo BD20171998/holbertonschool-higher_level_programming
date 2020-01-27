@@ -29,7 +29,7 @@ class Base:
         a list of dictionaries
         """
 
-        if len(list_dictionaries) == 0 or list_dictionaries is None:
+        if list_dictionaries is None:
             return "[]"
 
         return dumps(list_dictionaries)
