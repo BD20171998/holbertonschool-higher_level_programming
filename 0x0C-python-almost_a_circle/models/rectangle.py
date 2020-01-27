@@ -160,3 +160,13 @@ class Rectangle(Base):
 
             if 'id' in passed_kwargs:
                 super().__init__(passed_kwargs['id'])
+
+    def to_dictionary(self):
+        """
+        Public method that returns the dictionary representation of class
+        Rectangle
+        """
+        curr_args = {"id": self.id, "width": self.width,
+                     "height": self.height, "x": self.x, "y": self.y}
+
+        return curr_args
