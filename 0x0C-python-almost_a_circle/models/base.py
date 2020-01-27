@@ -44,28 +44,18 @@ class Base:
 
         classname = cls.__name__
 
-        if list_objs is None and classname == "Rectangle":
-            with open("Rectangle.json", mode='w', encoding='utf-8') as f:
-                dump(rs_json, f)
-                f.close()
+        if list_objs is not None:
 
-        if list_objs is None and classname == "Square":
-            with open("Square.json", mode='w', encoding='utf-8') as f:
-                dump(rs_json, f)
-                f.close()
+            for i in list_objs:
+                rs_json.append(cls.to_dictionary(i))
 
-        for i in list_objs:
-            rs_json.append(cls.to_dictionary(i))
+        else:
+            rs_json = '[]'
 
-        if classname == "Rectangle":
-            with open("Rectangle.json", mode='w', encoding='utf-8') as f:
-                dump(rs_json, f)
-                f.close()
-
-        if classname == "Square":
-            with open("Square.json", mode='w', encoding='utf-8') as f:
-                dump(rs_json, f)
-                f.close()
+        with open(classname+".json", mode='w', encoding='utf-8') as f:
+            jsonstring = cls.to_json_string(rs_json)
+            f.write(jsonstring)
+            f.close()
 
     @staticmethod
     def from_json_string(json_string):
