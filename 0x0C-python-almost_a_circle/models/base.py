@@ -4,6 +4,7 @@
 """importing json module"""
 from json import dumps, dump, loads
 
+
 class Base:
     """
     Base class that manages the id attribute in all
@@ -19,8 +20,7 @@ class Base:
 
         else:
             Base.__nb_objects += 1
-            self.id =  Base.__nb_objects
-
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -45,7 +45,7 @@ class Base:
         rs_json2 = []
 
         if list_objs is None:
-           with open("empty.json", mode='a', encoding='utf-8') as g:
+            with open("empty.json", mode='a', encoding='utf-8') as g:
                 dump(rs_json, g)
 
         classname = cls.__name__
