@@ -29,9 +29,8 @@ class Base:
         a list of dictionaries
         """
 
-        jlist = '[]'
         if len(list_dictionaries) == 0 or list_dictionaries is None:
-            return jlist
+            return "[]"
 
         return dumps(list_dictionaries)
 
