@@ -50,7 +50,7 @@ class Base:
                 rs_json.append(cls.to_dictionary(i))
 
         else:
-            rs_json = '[]'
+            rs_json = []
 
         with open(classname+".json", mode='w', encoding='utf-8') as f:
             jsonstring = cls.to_json_string(rs_json)
