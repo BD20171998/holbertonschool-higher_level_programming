@@ -41,76 +41,31 @@ class Base:
         instances who inherit of class Base to a file
         """
         rs_json = []
-        rs_json2 = []
-
-        if list_objs is None or len(list_objs) == 0:
-            with open("empty.json", mode='a', encoding='utf-8') as g:
-                dump(rs_json, g)
-                g.close()
 
         classname = cls.__name__
 
+        if list_objs is None and classname == "Rectangle":
+            with open("Rectangle.json", mode='w', encoding='utf-8') as f:
+                dump(rs_json, f)
+                f.close()
+
+        if list_objs is None and classname == "Square":
+            with open("Square.json", mode='w', encoding='utf-8') as f:
+                dump(rs_json, f)
+                f.close()
+
         for i in list_objs:
-
-            if classname == "Square":
-
-                obj_dict = {}
-
-                xname = "_Rectangle__x"
-                xval = i.__dict__[xname]
-                obj_dict.update([("x", xval)])
-
-                yname = "_Rectangle__y"
-                yval = i.__dict__[yname]
-                obj_dict.update([("y", yval)])
-
-                hname = "_Rectangle__height"
-                hval = i.__dict__[hname]
-                obj_dict.update([("height", hval)])
-
-                wname = "_Rectangle__width"
-                wval = i.__dict__[wname]
-                obj_dict.update([("width", wval)])
-
-                ival = i.__dict__["id"]
-                obj_dict.update([("id", ival)])
-
-                rs_json.append(obj_dict)
-
-            if classname == "Rectangle":
-
-                obj_dict2 = {}
-
-                xname = "_Rectangle__x"
-                xval = i.__dict__[xname]
-                obj_dict2.update([("x", xval)])
-
-                yname = "_Rectangle__y"
-                yval = i.__dict__[yname]
-                obj_dict2.update([("y", yval)])
-
-                hname = "_Rectangle__height"
-                hval = i.__dict__[hname]
-                obj_dict2.update([("height", hval)])
-
-                wname = "_Rectangle__width"
-                wval = i.__dict__[wname]
-                obj_dict2.update([("width", wval)])
-
-                ival = i.__dict__["id"]
-                obj_dict2.update([("id", ival)])
-
-                rs_json2.append(obj_dict2)
+            rs_json.append(cls.to_dictionary(i))
 
         if classname == "Rectangle":
-            with open(classname+".json", mode='w', encoding='utf-8') as f1:
-                dump(rs_json2, f1)
-                f1.close()
+            with open("Rectangle.json", mode='w', encoding='utf-8') as f:
+                dump(rs_json, f)
+                f.close()
 
         if classname == "Square":
-            with open(classname+".json", mode='w', encoding='utf-8') as f2:
-                dump(rs_json, f2)
-                f2.close()
+            with open("Square.json", mode='w', encoding='utf-8') as f:
+                dump(rs_json, f)
+                f.close()
 
     @staticmethod
     def from_json_string(json_string):
