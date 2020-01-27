@@ -11,7 +11,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """Class constructor"""
-        super().__init__(size, size, x, y, id=id)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
@@ -22,14 +22,8 @@ class Square(Rectangle):
     def size(self, size):
         """Sets and assigns size for width and height"""
 
-        if type(size) is not int:
-            raise TypeError('width must be an integer')
-
-        if size < 0:
-            raise ValueError('width must be >= 0')
-
-        Rectangle.width = size
-        Rectangle.height = size
+        self.width = size
+        self.height = size
 
     def __str__(self):
         """
@@ -60,10 +54,10 @@ class Square(Rectangle):
                 self.size = arg_dict['size']
 
             if 'x' in arg_dict:
-                Rectangle.x = arg_dict['x']
+                self.x = arg_dict['x']
 
             if 'y' in arg_dict:
-                Rectangle.y = arg_dict['y']
+                self.y = arg_dict['y']
 
             if 'id' in arg_dict:
                 self.id = arg_dict['id']
@@ -75,10 +69,10 @@ class Square(Rectangle):
                 self.size = passed_kwargs['size']
 
             if 'x' in passed_kwargs:
-                Rectangle.x = passed_kwargs['x']
+                self.x = passed_kwargs['x']
 
             if 'y' in passed_kwargs:
-                Rectangle.y = passed_kwargs['y']
+                self.y = passed_kwargs['y']
 
             if 'id' in passed_kwargs:
                 self.id = (passed_kwargs['id'])
