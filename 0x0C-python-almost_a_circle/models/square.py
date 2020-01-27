@@ -68,6 +68,8 @@ class Square(Rectangle):
             if 'id' in arg_dict:
                 self.id = arg_dict['id']
 
+            return
+
         if len(passed_args) == 0 and len(passed_kwargs) > 0:
             if 'size' in passed_kwargs:
                 self.size = passed_kwargs['size']
