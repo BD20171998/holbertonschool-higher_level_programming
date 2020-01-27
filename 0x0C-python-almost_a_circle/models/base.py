@@ -55,7 +55,6 @@ class Base:
         with open(classname+".json", mode='w', encoding='utf-8') as f:
             jsonstring = cls.to_json_string(rs_json)
             f.write(jsonstring)
-            f.close()
 
     @staticmethod
     def from_json_string(json_string):
