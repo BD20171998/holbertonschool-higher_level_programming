@@ -14,10 +14,6 @@ class TestRectangle(unittest.TestCase):
         pass
 
     def test_rect_id1(self):
-        self.a0 = Rectangle(10, 2)
-        self.assertEqual(self.a0.id, 1)
-
-    def test_rect_id2(self):
         self.a0 = Rectangle(10, 3)
         self.a3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(self.a3.id, 12)
