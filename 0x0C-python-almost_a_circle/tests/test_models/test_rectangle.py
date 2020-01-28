@@ -18,6 +18,10 @@ class TestRectangle(unittest.TestCase):
         self.a3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(self.a3.id, 12)
 
+    def test_rect_area(self):
+        self.a0 = Rectangle(7, 8, 9, 6)
+        self.assertEqual(self.a0.area(), 56)
+
     def test_rect_noargs(self):
         try:
             self.a0 = Rectangle()
@@ -66,8 +70,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_rect_bad_x(self):
             with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-                self.a0 = Rectangle(1, 2, -9, 1)
+                self.a4 = Rectangle(1, 2, -9, 1)
 
     def test_rect_bad_y(self):
             with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-                self.a0 = Rectangle(1, 2, 9, -1)
+                self.a7 = Rectangle(1, 2, 9, -1)
