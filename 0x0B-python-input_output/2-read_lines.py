@@ -20,7 +20,7 @@ def read_lines(filename="", nb_lines=0):
         x = 0
 
         if nb_lines <= 0 or nb_lines is None:
-            print(f.read())
+            print(f.read(), end='')
             f.close()
             return
 
