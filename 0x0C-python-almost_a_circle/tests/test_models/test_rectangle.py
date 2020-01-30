@@ -3,6 +3,7 @@
 Unittest for Rectangle class
 """
 import unittest
+from filecmp import cmp
 from io import StringIO
 from unittest.mock import patch
 from models.base import Base
@@ -273,3 +274,24 @@ class TestRectangle(unittest.TestCase):
             with open("Rectangle.json", "r") as file:
                 print(file.read())
                 self.assertEqual(f.getvalue(),"[]\n")
+
+    def test_rect_save3(self):
+        r0 = Rectangle(1, 2, 3, 4, 5)
+
+        Rectangle.save_to_file([Rectangle(1, 2, 3, 4, 5)])
+        f_dictionary_list = Rectangle.load_from_file()
+        f_dictionary2 = f_dictionary_list[0]
+
+
+        output1 = StringIO()
+
+        print(r0, file=output1, end='')
+        contents1 = output1.getvalue()
+        output1.close()
+
+        output2 = StringIO()
+        print(f_dictionary2, file=output2, end='')
+        contents2 = output2.getvalue()
+        output2.close()
+
+        self.assertEqual(contents1, contents2)
