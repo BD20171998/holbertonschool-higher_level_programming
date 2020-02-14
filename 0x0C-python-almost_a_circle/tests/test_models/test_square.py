@@ -44,11 +44,20 @@ class TestSquare(unittest.TestCase):
             self.assertRaises(TypeError, "__init__() missing 1 required positional argument: 'size'")
 
     def test_sq_wrong_size(self):
-        try:
-            self.a0 = Square("9")
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r1 = Square("9")
 
-        except:
-            self.assertRaises(TypeError, "width must be an integer")
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r2 = Square(1, "8")
+
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r3 = Square(1, 8, "9")
+
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r4 = Square(-9)
+
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r5 = Square(0)
 
     def test_sq_wrong_size2(self):
         try:
@@ -65,30 +74,6 @@ class TestSquare(unittest.TestCase):
 
         except:
             self.assertRaises(TypeError, "width must be an integer")
-
-    def test_sq_wrong_x(self):
-        try:
-            self.a0 = Rectangle(1, 2)
-            self.a1 = Square(1, "8")
-
-        except:
-            self.assertRaises(TypeError, "x must be an integer")
-
-    def test_sq_wrong_y(self):
-        try:
-            self.a0 = Rectangle(1, 2)
-            self.a1 = Square(1, 8, "9")
-
-        except:
-            self.assertRaises(TypeError, "y must be an integer")
-
-    def test_sq_bad_size4(self):
-        with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            self.a1 = Square(-9)
-
-    def test_sq_bad_size5(self):
-        with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            self.a1 = Square(0)
 
     def test_sq_bad_size5(self):
         try:
@@ -188,6 +173,7 @@ class TestSquare(unittest.TestCase):
             print(self.a0 is self.a1)
             print(self.a0 == self.a1)
             self.assertEqual(f.getvalue(),"[Square] (89) 0/0 - 1\n[Square] (89) 0/0 - 1\nFalse\nFalse\n")
+
     def test_sq_create2(self):
         self.a0 = Square(1, 0, 0, 89)
         self.a1 = Square.create(**{ 'id': 89, 'size': 1})

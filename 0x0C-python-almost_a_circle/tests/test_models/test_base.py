@@ -10,9 +10,6 @@ class TestBase(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
 
-    def tearDown(self):
-        pass
-
     def test_single_blankid(self):
         self.a0 = Base()
         self.assertEqual(self.a0.id, 1)
