@@ -228,10 +228,10 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(contents1, contents2)
 
     def test_sq_no_load(self):
-         f_dictionary_list = Square.load_from_file()
-         output1 = StringIO()
-         print(f_dictionary_list, file=output1, end='')
-         contents1 = output1.getvalue()
-         output1.close()
+         f_dictionary_list_b = Square.load_from_file()
+         outputA = StringIO()
+         print(f_dictionary_list_b, file=outputA, end='')
+         contentsA = outputA.getvalue()
+         outputA.close()
 
-         self.assertEqual(contents1, "[]")
+         self.assertEqual(contentsA, "[]")
