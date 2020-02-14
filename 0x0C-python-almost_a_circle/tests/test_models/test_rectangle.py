@@ -39,18 +39,17 @@ class TestRectangle(unittest.TestCase):
             self.assertRaises(TypeError, "__init__() missing 1 required positional argument: 'height'")
 
     def test_rect_wrong_width(self):
-        try:
-            self.a0 = Rectangle("2", 9)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r1 = Rectangle("2", 9)
 
-        except:
-            self.assertRaises(TypeError, "width must be an integer")
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r2 = Rectangle(2, "9")
 
-    def test_rect_wrong_height(self):
-        try:
-            self.a0 = Rectangle(2, "9")
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r3 = Rectangle(2, 9, "99")
 
-        except:
-            self.assertRaises(TypeError, "height must be an integer")
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r4 = Rectangle(2, 9, 9, "99")
 
     def test_rect_wrong_height2(self):
         try:
@@ -80,23 +79,10 @@ class TestRectangle(unittest.TestCase):
          with self.assertRaisesRegex(ValueError, "height must be > 0"):
             self.a0 = Rectangle(1, 0)
 
-    def test_rect_wrong_x(self):
-        try:
-            self.a0 = Rectangle(2, 9, "99")
-
-        except:
-            self.assertRaises(TypeError, "x must be an integer")
 
     def test_rect_bad_x(self):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             self.a4 = Rectangle(1, 2, -9, 1)
-
-    def test_rect_wrong_y(self):
-        try:
-            self.a0 = Rectangle(2, 9, 9, "99")
-
-        except:
-            self.assertRaises(TypeError, "y must be an integer")
 
     def test_rect_bad_y(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
