@@ -14,6 +14,8 @@ class TestSquare(unittest.TestCase):
 
     def setUp(self):
         Base._Base__nb_objects = 0
+        open('Rectangle.json', 'w').close()
+        open('Square.json', 'w').close()
 
     def test_sq_id1(self):
         self.a0 = Square(10, 3)
