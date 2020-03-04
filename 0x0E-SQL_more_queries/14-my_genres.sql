@@ -2,5 +2,5 @@
 -- show Dexter
 SELECT tv_genres.name AS NAME FROM tv_genres WHERE tv_shows.title = 'Dexter'
 AND tv_show_genres.genre_id = tv_genres.id
-AND tv_show_genres.genre_id = tv_shows.id
+AND tv_show_genres.show_id = tv_shows.id
 ORDER BY tv_genres.name ASC;
