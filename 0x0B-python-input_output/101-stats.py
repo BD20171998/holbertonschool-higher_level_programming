@@ -15,10 +15,14 @@ if __name__ == "__main__":
         for line in sys.stdin:
 
             a = line.split()
-            filetotal += int(a[8])
 
-            if a[7] in stats.keys():
-                stats[a[7]] += 1
+            if len(a) < 2:
+                continue
+
+            filetotal += int(a[-1])
+
+            if a[-2] in stats.keys():
+                stats[a[-2]] += 1
 
             count += 1
 
