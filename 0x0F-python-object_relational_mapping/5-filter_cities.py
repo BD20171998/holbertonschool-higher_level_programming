@@ -14,13 +14,11 @@ if __name__ == "__main__":
     allrecs = cur.rowcount
     rows = cur.fetchall()
 
-    for row in rows:
-        if i == allrecs:
-            print("{}".format(row[0]))
-            break
+    mylist = []
+    for i in results:
+        mylist.append(i[0])
 
-        print("{}, ".format(row[0]), end="")
-        i += 1
+    print(", ".join(mylist))
 
     cur.close()
     db.close()
