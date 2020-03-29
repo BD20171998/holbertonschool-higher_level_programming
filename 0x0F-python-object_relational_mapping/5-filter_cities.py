@@ -10,12 +10,10 @@ if __name__ == "__main__":
     cur.execute("SELECT cities.name FROM cities, states WHERE state_id = \
     states.id AND states.name = %s ORDER BY cities.id ASC", (sys.argv[4],))
 
-    i = 1
-    allrecs = cur.rowcount
     rows = cur.fetchall()
 
     mylist = []
-    for i in results:
+    for i in rows:
         mylist.append(i[0])
 
     print(", ".join(mylist))
