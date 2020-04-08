@@ -7,11 +7,11 @@ def find_peak(list_of_integers):
         return None
 
     def binarySearch(arr, l, r):
+
         if l == r:
             return l
 
         mid = (r + l) / 2
-
         mid = int(mid)
 
         if arr[mid] > arr[mid + 1]:
@@ -19,4 +19,5 @@ def find_peak(list_of_integers):
 
         return binarySearch(arr, mid + 1, r)
 
-    return binarySearch(list_of_integers, 0, len(list_of_integers)-1)
+    return list_of_integers[binarySearch(list_of_integers, 0,
+                                         len(list_of_integers) - 1)]
