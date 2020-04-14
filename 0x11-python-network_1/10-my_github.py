@@ -11,4 +11,4 @@ if __name__ == "__main__":
 
     my_dict = html.json()
 
-    print(my_dict['id'])
+    print(my_dict.get('id'))
