@@ -15,6 +15,7 @@ request.get(requestURL, (err, res, body) => {
           user = data[i].userId;
           list[user] = 1;
         } else {
+          user = data[i].userId;
           list[user] += 1;
         }
       }
