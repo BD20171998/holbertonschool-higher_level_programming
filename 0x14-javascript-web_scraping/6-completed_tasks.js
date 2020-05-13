@@ -8,14 +8,15 @@ request.get(requestURL, (err, res, body) => {
     console.log(err);
   } else {
     const data = JSON.parse(body);
-
+    let user = 'default';
     for (let i = 0; i < data.length; i++) {
       if (data[i].completed === true) {
         if (!(data[i].userId in list)) {
           user = data[i].userId;
-          list[user] = 0;
+          list[user] = 1;
+        } else {
+          list[user] += 1;
         }
-        list[user] += 1;
       }
     }
     console.log(list);
