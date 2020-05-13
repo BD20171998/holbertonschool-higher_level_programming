@@ -13,13 +13,11 @@ request.get(requestURL, (err, res, body) => {
       if (data[i].completed === true) {
         if (!(data[i].userId in list)) {
           user = data[i].userId;
-          list[user] = 1;
-        } else {
-          list[user] += 1;
+          list[user] = 0;
         }
+        list[user] += 1;
       }
     }
-
     console.log(list);
   }
 });
