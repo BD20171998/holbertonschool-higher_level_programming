@@ -10,7 +10,7 @@ request.get(requestURL, (err, res, body) => {
     const list = {};
     let user = 'default';
     for (let i = 0; i < data.length; i++) {
-      if (data[i].completed === true) {
+      if (data[i].completed) {
         if (!(data[i].userId in list)) {
           user = data[i].userId;
           list[user] = 0;
