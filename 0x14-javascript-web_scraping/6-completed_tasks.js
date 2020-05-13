@@ -10,6 +10,9 @@ request.get(requestURL, (err, res, body) => {
     console.log(err);
   } else {
     const data = JSON.parse(body);
+    if (data.length === undefined) {
+      throw err;
+    }
     const list = {};
     let user = 'default';
 
