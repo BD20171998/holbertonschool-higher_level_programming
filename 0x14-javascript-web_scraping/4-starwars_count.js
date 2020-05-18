@@ -13,7 +13,7 @@ request.get(requestURL, (err, res, body) => {
     let count = 0;
     for (let i = 0; i < results.length; i++) {
       for (let j = 0; j < results[i].characters.length; j++) {
-        if (results[i].characters[j] === 'https://swapi-api.hbtn.io/api/people/18/') { count += 1; }
+        if (results[i].characters[j].includes('18')) { count += 1; }
       }
     }
 
