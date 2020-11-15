@@ -1,5 +1,5 @@
-This is a README file for 0x06. Python - Classes and Objects
-n - Classes and Objects
+# 0x06. Python - Classes and Objects
+
 
 ## Learning Objectives
 
