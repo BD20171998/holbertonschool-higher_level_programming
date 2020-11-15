@@ -1,5 +1,4 @@
-This is a README file for 0x05. Python - Exceptions
-n - Exceptions
+# 0x05. Python - Exceptions
 
 ## Learning Objectives
 
